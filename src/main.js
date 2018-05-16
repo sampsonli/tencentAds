@@ -13,6 +13,10 @@ import vueTap from 'v-tap'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
+import '~/icons'
+//  权限控制
+// import './permission.js'
+
 Vue.use(ElementUI)
 Vue.use(vueTap)
 const store = storeFactory()

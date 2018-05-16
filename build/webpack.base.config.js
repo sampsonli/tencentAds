@@ -35,6 +35,7 @@ module.exports = {
         alias: {
             '~': srcPath,
             '~common': path.join(srcPath, 'common'),
+            '~icons': path.join(srcPath, 'icons'),
             '~store': path.join(srcPath, 'store'),
             '~components': path.join(srcPath, 'components'),
             '~pages': path.join(srcPath, 'pages'),
