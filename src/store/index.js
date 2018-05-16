@@ -7,11 +7,6 @@ import Vuex from 'vuex'
 // import SockJS from 'sockjs-client'
 import home from './home'
 import user from './user'
-import xtManager from './xtManager'
-import tgyManager from './tgyManager'
-import ybyz from './ybyz'
-import htyz from './htyz'
-import allReport from './allReport'
 import onlinePay from './onlinePay'
 
 import {wait, str2Bytes} from '../common/util'
@@ -205,6 +200,6 @@ export default () => new Vuex.Store({
     actions,
     mutations,
     modules: {
-        home, user, xtManager, tgyManager, ybyz, htyz, allReport, onlinePay
+        home, user, onlinePay
     }
 })
