@@ -5,18 +5,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-// home  first tab
-import Home from '~pages/home/home.vue'
-
 /* Layout */
 import Layout from '~/pages/layout/Layout'
 
 const Login = () => import
         ('~pages/Login' /* webpackChunkName: "chunks/Login" */)
-// 6
-const onlinePay = () =>
-    import
-        ('~pages/home/onlinePay/onlinePay.vue' /* webpackChunkName: "chunks/home/onlinePay/onlinePay" */)
 
 // 404  ok
 const page_404 = () =>
@@ -28,27 +21,12 @@ const DashBoard_index = () =>
         ('~/pages/dashboard/index' /* webpackChunkName: "chunks/dashboard/index" */)
 
 // betblock 相关的东西
-const bb_withdraw = () =>
-    import
-        ('~/pages/betblock/withdraw')
+const bb_withdraw = () => import('~/pages/betblock/withdraw')
 
 Vue.use(VueRouter)
 export default new VueRouter({
     mode: 'hash',
     routes: [
-        {
-            path: '/home',
-            component: Home,
-            hidden: true,
-            requiresAuth: true,
-            children: [
-                {
-                    path: 'onlinePay',
-                    component: onlinePay,
-                    meta: {requireAuth: true}
-                }
-            ]
-        },
         {
             path: '/',
             component: Layout,

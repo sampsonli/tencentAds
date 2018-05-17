@@ -4,9 +4,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import home from './home'
-import onlinePay from './onlinePay'
-
 import app from '~store/modules/app'
 import getters from './getters'
 
@@ -201,7 +198,7 @@ export default () => new Vuex.Store({
     actions,
     mutations,
     modules: {
-        home, onlinePay, app
+        app
     },
     getters
 })
