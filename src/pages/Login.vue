@@ -1,7 +1,8 @@
 <template>
     <el-container>
         <el-main>
-            <p class="loginTitle">广点通助手</p>
+            <!--<p class="loginTitle">广点通助手</p>-->
+            <p class="loginTitle">后台</p>
             <el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="70px"
                      class="demo-ruleForm">
                 <el-form-item label="账号" prop="name">
@@ -20,76 +21,75 @@
 </template>
 
 <script>
-    import { aTypes } from '../store/user'
-    import { wait } from '../common/util'
-    export default {
-        data () {
-            var checkName = (rule, value, callback) => {
-                if (!value) {
-                    return callback(new Error('账号不能为空'))
-                }
-                setTimeout(() => {
-                    //  处理规则
-                    callback()
-                }, 10)
-            }
-            var validatePass = (rule, value, callback) => {
-                if (value === '') {
-                    callback(new Error('请输入密码'))
-                } else {
-                    if (this.ruleForm2.checkPass !== '') {
-                        //  处理字符等
-                    }
-                }
-                callback()
-            }
-            return {
-                ruleForm2: {
-                    pass: '',
-                    name: ''
-                },
-                rules2: {
-                    pass: [{validator: validatePass, trigger: 'blur'}],
-                    name: [{validator: checkName, trigger: 'blur'}]
-                }
-            }
-        },
+	import {aTypes} from '../store/user'
+	import {wait} from '../common/util'
+	export default {
+	    data () {
+	        var checkName = (rule, value, callback) => {
+	            if (!value) {
+	                return callback(new Error('账号不能为空'))
+	            }
+	            setTimeout(() => {
+	                //  处理规则
+	                callback()
+	            }, 10)
+	        }
+	        var validatePass = (rule, value, callback) => {
+	            if (value === '') {
+	                callback(new Error('请输入密码'))
+	            } else {
+	                if (this.ruleForm2.checkPass !== '') {
+	                    //  处理字符等
+	                }
+	            }
+	            callback()
+	        }
+	        return {
+	            ruleForm2: {
+	                pass: '',
+	                name: ''
+	            },
+	            rules2: {
+	                pass: [{validator: validatePass, trigger: 'blur'}],
+	                name: [{validator: checkName, trigger: 'blur'}]
+	            }
+	        }
+	    },
 
-        methods: {
-            submitForm (formName) {
-                this.$refs[formName].validate(valid => {
-                    if (valid) {
-                        (async () => {
-                            try {
-//                            await this.$store.dispatch(aTypes.login, this.ruleForm2)
-                                this.$message({
-                                    message: '登录成功',
-                                    type: 'success',
-                                    duration: 1200
-                                })
-                                await wait(1200)
-                                this.$router.replace('/home/onlinePay')
-                                return false
-                            } catch (e) {
-                                this.$message({
-                                    message: e.message,
-                                    type: 'error',
-                                    duration: 1200
-                                })
-                            }
-                        })()
-                    } else {
-                        console.log('error submit!!')
-                        return false
-                    }
-                })
-
-            },
-            resetForm (formName) {
-                this.$refs[formName].resetFields()
-            }
-        }
-    }
+	    methods: {
+	        submitForm (formName) {
+	            this.$refs[formName].validate(valid => {
+	                if (valid) {
+	                    (async () => {
+	                        try {
+                            //                            await this.$store.dispatch(aTypes.login, this.ruleForm2)
+	                            this.$message({
+	                                message: '登录成功',
+	                                type: 'success',
+	                                duration: 1200
+	                            })
+	                            await wait(1200)
+	                            this.$router.replace('/home/onlinePay')
+	                            return false
+	                        } catch (e) {
+	                            this.$message({
+	                                message: e.message,
+	                                type: 'error',
+	                                duration: 1200
+	                            })
+	                        }
+	                    })()
+	                } else {
+	                    console.log('error submit!!')
+	                    return false
+	                }
+	            })
+	        },
+	        resetForm (formName) {
+	            this.$refs[formName].resetFields()
+	        }
+	    }
+	}
 </script>
 <style scoped>
     .el-main {

@@ -1,13 +1,14 @@
 /**
  * Created by lichun on 2017/1/19.
  */
-
 import Vue from 'vue'
 import Vuex from 'vuex'
-// import SockJS from 'sockjs-client'
+
 import home from './home'
-import user from './user'
 import onlinePay from './onlinePay'
+
+import app from '~store/modules/app'
+import getters from './getters'
 
 import {wait, str2Bytes} from '../common/util'
 import { globalWebsockUrl } from '../common/config'
@@ -200,6 +201,7 @@ export default () => new Vuex.Store({
     actions,
     mutations,
     modules: {
-        home, user, onlinePay
-    }
+        home, onlinePay, app
+    },
+    getters
 })

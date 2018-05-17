@@ -1,5 +1,5 @@
 /**
- * Created by lichun on 2017/5/10.
+ * Created
  */
 
 import Vue from 'vue'
@@ -15,10 +15,10 @@ const Login = () => import('~pages/Login' /* webpackChunkName: "chunks/Login" */
 // 6
 const onlinePay = () => import('~pages/home/onlinePay/onlinePay.vue' /* webpackChunkName: "chunks/home/onlinePay/onlinePay" */)
 
-// 404
-const page_404 = () => import('~/pages/404.vue')
+// 404  ok
+const page_404 = () => import('~/pages/404.vue' /* webpackChunkName: "chunks/page404" */)
 
-const DashBoard_index = () => import('~/pages/dashboard/index')
+const DashBoard_index = () => import('~/pages/dashboard/index' /* webpackChunkName: "chunks/dashboard/index" */)
 
 // betblock 相关的东西
 const bb_withdraw = () => import('~/pages/betblock/withdraw')

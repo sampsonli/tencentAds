@@ -29,20 +29,16 @@
         watch: {
             showErrorBox () {
                 this.openError()
-            },
-            loginInfo (loginInfo) {
-                if (!loginInfo) {
-                    this.$router.replace('/test')
-                }
             }
+
         },
         async mounted () {
             if (this.$route.path !== '/login') {
                 this.$router.replace('/login')
             }
             try {
-//            await this.$store.dispatch('initWebsocket')
-//            await this.$store.dispatch('getServerTime')
+            //            await this.$store.dispatch('initWebsocket')
+            //            await this.$store.dispatch('getServerTime')
             } catch (e) {
                 setTimeout(() => {
                     // location.reload()

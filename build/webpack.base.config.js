@@ -23,6 +23,7 @@ module.exports = {
                 test: /\.css$/,
                 loader: 'style-loader!css-loader'
             },
+            {test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader'},
             {
                 test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
                 loader: 'file-loader'
@@ -54,8 +55,8 @@ module.exports = {
             chunks: ['manifest', 'vendor', 'app']
         })
         /* new CopyWebpackPlugin([
-         {from: 'login', to: 'login'},
-         ]) */
+		 {from: 'login', to: 'login'},
+		 ]) */
 
     ]
 }
