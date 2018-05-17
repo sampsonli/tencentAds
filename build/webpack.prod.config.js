@@ -78,7 +78,7 @@ module.exports = Object.assign({}, base, {
 
             },
             {
-                test: /\.(png|jpg|gif|svg)$/,
+                test: /\.(png|jpg|gif)$/,
                 loader: 'file-loader',
                 query: {
                     // name: '[path][name].[hash:8].[ext]'
