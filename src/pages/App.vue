@@ -1,49 +1,23 @@
 <template>
     <div id="app" class="l-full">
+
         <router-view></router-view>
-        <el-button type="text" @click="openError" style="display: block">点击打开 Message Box</el-button>
     </div>
 </template>
 <script>
     export default {
         computed: {
-            loginInfo () {
-                return this.$store.state.user.loginInfo
-            },
-            showErrorBox () {
-                return this.$store.state.showErrorBox
-            }
+
         },
         methods: {
-            openError () {
-                this.$alert('网络连接异常，请重新进入', '网络连接异常', {
-                    confirmButtonText: '刷新',
-                    callback: action => {
-                        if (action === 'confirm') {
-                            window.location.reload()
-                        }
-                    }
-                })
-            }
+
         },
         watch: {
-            showErrorBox () {
-                this.openError()
-            }
+
 
         },
         async mounted () {
-            if (this.$route.path !== '/login') {
-                this.$router.replace('/login')
-            }
-            try {
-            //            await this.$store.dispatch('initWebsocket')
-            //            await this.$store.dispatch('getServerTime')
-            } catch (e) {
-                setTimeout(() => {
-                    // location.reload()
-                }, 5000)
-            }
+
         }
     }
 </script>

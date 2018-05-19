@@ -23,6 +23,17 @@ const actions = {
 
 }
 
+
+
+// const cache = {};
+// ((r) => {
+//     r.keys().forEach(key => {
+//         if (!~key.indexOf('index.js')) {
+//             cache[key.split('/')[1].split('.')[0]] = r(key).default;
+//         }
+//     });
+// })(require.context('./', true, /\.js$/));
+
 export default () => new Vuex.Store({
     state,
     actions,

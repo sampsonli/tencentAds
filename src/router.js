@@ -5,6 +5,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+const Login = () => import('./pages/user/login.vue')
+
 
 
 Vue.use(VueRouter)
@@ -25,7 +27,6 @@ export default new VueRouter({
 		{
 			path: '/login',
 			component: Login,
-			hidden: true
 		},
 		// {
 		// 	path: '/404',
